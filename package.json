@@ -10,9 +10,21 @@
   "author": "Brittany Bui",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.1.0"
+    "jest": "^27.1.0",
+    "jest-html-reporter": "^3.4.1"
   },
   "dependencies": {
     "nodemon": "^2.0.12"
+  },
+  "jest": {
+    "reporters": [
+      "default", [
+        "./node_modules/jest-html-reporter",
+        {
+          "pageTitle": "Test Report"
+        }
+      ]
+    ],
+    "collectCoverage": true
   }
 }

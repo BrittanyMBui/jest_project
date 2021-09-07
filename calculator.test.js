@@ -1,6 +1,24 @@
 const mathOperations = require('./calculator');
 
 describe("Calculator tests", () => {
+    var input1 = 0
+    var input2 = 0
+
+    beforeAll(() => {
+        console.log('beforeAll called')
+    });
+    afterAll(() => {
+        console.log('afterAll called')
+    });
+    beforeEach(() => {
+        console.log('beforeEach called');
+        input1 = 1;
+        input2 = 2;
+    });
+    afterEach(() => {
+        console.log('afterEach called');
+    });
+    
     test('adding 1 + 2 should return 3', () => {
         var result = mathOperations.sum(1, 2)
         expect(result).toBe(3);
@@ -45,5 +63,14 @@ describe("Calculator tests", () => {
 
         // greater than or equal to
         expect(num3).toBeGreaterThanOrEqual(0)
+    })
+    test('string matchers', () => {
+        var string1 = 'software testing help - a great resource for testers'
+
+        // test for success match
+        expect(string1).toMatch(/test/);
+
+        // test for failure match
+        expect(string1).not.toMatch()
     })
 });
