@@ -13,4 +13,23 @@ describe("Calculator tests", () => {
         var result = mathOperations.product(8, 2)
         expect(result).toBe(16);
     });
+    test('equality matchers', () => {
+        expect(2*2).toBe(4);
+        expect(4-2).not.toBe(1);
+    });
+    test('truthy operators', () => {
+        var name = "Software testing help"
+        var n = null
+        expect(n).toBeNull()
+        expect(name).not.toBeNull
+
+        // name has a valid value
+        expect(name).toBeTruthy()
+
+        // fail - as null is non success
+        expect(n).toBeTruthy()
+
+        // pass - null treated as false or negative
+        expect(n).toBeFalsy()
+    })
 });
